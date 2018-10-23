@@ -1,0 +1,5 @@
+@layout('layouts.nonav')
+
+@section('content')
+  <login token="{{ csrfToken }}" error="{{ getErrorFor('loginFailed') }}"></login>
+@endsection

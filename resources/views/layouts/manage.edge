@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/css/all.css">
+  <title>Legar</title>
+</head>
+
+<body>
+  {{ csrfField() }}
+  <div id="app">
+    <v-app id="inspire">
+      <v-navigation-drawer v-model="drawer" fixed app>
+        <sidebar></sidebar>
+      </v-navigation-drawer>
+      <v-toolbar color="primary" dark fixed app>
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <right-toolbar></right-toolbar>
+      </v-toolbar>
+      <v-content>
+        <v-container fluid>
+          <Loader></Loader>
+          <init-store></init-store>
+          <session-error error="{{ getErrorFor('sessionError') }}"></session-error>
+          @!section('content')
+        </v-container>
+      </v-content>
+      <v-footer color="primary" app>
+        <span class="white--text">&copy; 2017</span>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+
+</html>
