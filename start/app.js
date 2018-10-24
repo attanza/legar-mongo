@@ -18,9 +18,11 @@ const providers = [
   "@adonisjs/shield/providers/ShieldProvider",
   "@adonisjs/session/providers/SessionProvider",
   "@adonisjs/auth/providers/AuthProvider",
-  "lucid-mongo/providers/LucidMongoProvider",
+  // "lucid-mongo/providers/LucidMongoProvider",
+  "@adonisjs/lucid/providers/LucidProvider",
   "@adonisjs/redis/providers/RedisProvider",
-  "@adonisjs/validator/providers/ValidatorProvider"
+  "@adonisjs/validator/providers/ValidatorProvider",
+  "@adonisjs/lucid-slugify/providers/SlugifyProvider"
 ];
 
 /*
@@ -32,7 +34,10 @@ const providers = [
 | Providers for migrations, tests etc.
 |
 */
-const aceProviders = ["lucid-mongo/providers/MigrationsProvider"];
+const aceProviders = [
+  // "lucid-mongo/providers/MigrationsProvider"
+  "@adonisjs/lucid/providers/MigrationsProvider"
+];
 
 /*
 |--------------------------------------------------------------------------

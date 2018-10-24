@@ -1,7 +1,7 @@
-'use strict'
+"use strict";
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
+const Env = use("Env");
 
 module.exports = {
   /*
@@ -15,7 +15,7 @@ module.exports = {
   | For `redis` driver, make sure to install and register `@adonisjs/redis`
   |
   */
-  driver: Env.get('SESSION_DRIVER', 'cookie'),
+  driver: Env.get("SESSION_DRIVER", "cookie"),
 
   /*
   |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ module.exports = {
   | are signed and encrypted.
   |
   */
-  cookieName: 'adonis-session',
+  cookieName: "legar-session",
 
   /*
   |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ module.exports = {
   |  '2h', '10d', '5y', '2.5 hrs'
   |
   */
-  age: '2h',
+  age: "2h",
 
   /*
   |--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ module.exports = {
   cookie: {
     httpOnly: true,
     sameSite: false,
-    path: '/'
+    path: "/"
   },
 
   /*
@@ -79,7 +79,7 @@ module.exports = {
   |
   */
   file: {
-    location: 'sessions'
+    location: "sessions"
   },
 
   /*
@@ -91,5 +91,5 @@ module.exports = {
   | the redis file. But you are free to define an object here too.
   |
   */
-  redis: 'self::redis.local'
-}
+  redis: "self::redis.local"
+};

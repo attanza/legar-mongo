@@ -152,8 +152,13 @@ class UserController {
   }
 
   async me({ response, auth }) {
-    const user = await auth.getUser();
-    return response.status(200).send(user);
+    try {
+      const user = await auth.getUser();
+      console.log("user", user.toJSON()); //eslint-disable-line
+      return response.status(200).send(user);
+    } catch (e) {
+      console.log("e", e); //eslint-disable-line
+    }
   }
 }
 
